@@ -1,0 +1,49 @@
+document.addEventListener('DOMContentLoaded', () => {
+    const toggleDarkModeButton = document.querySelector('.toggle-dark-mode');
+    const body = document.body;
+
+    // Función para alternar el modo oscuro
+    toggleDarkModeButton.addEventListener('click', () => {
+        body.classList.toggle('dark-mode');
+    });
+
+    const langEnButton = document.getElementById('lang-en');
+    const langEsButton = document.getElementById('lang-es');
+
+    // Elementos de texto que se cambiarán
+    const titleElement = document.querySelector('.categories h2'); // Título de categorías
+    const galleryElement = document.querySelector('.gallery h2'); // Título de galería
+    const footerElement = document.querySelector('footer p'); // Texto del footer
+
+    // Contenido en inglés
+    const contentEn = {
+        categories: "Categories",
+        gallery: "Gallery of Works",
+        footer: "© 2023 Saatchi Art Replica. All rights reserved."
+    };
+
+    // Contenido en español
+    const contentEs = {
+        categories: "Categorías",
+        gallery: "Galería de Obras",
+        footer: "© 2023 Réplica de Saatchi Art. Todos los derechos reservados."
+    };
+
+    // Función para cambiar el contenido según el idioma
+    function changeLanguage(content) {
+        titleElement.textContent = content.categories;
+        galleryElement.textContent = content.gallery;
+        footerElement.textContent = content.footer;
+    }
+
+    // Cambiar a inglés
+    langEnButton.addEventListener('click', () => {
+        changeLanguage(contentEn);
+    });
+
+    // Cambiar a español
+    langEsButton.addEventListener('click', () => {
+        changeLanguage(contentEs);
+    });
+});
+

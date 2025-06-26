@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css.css/intrucciones .css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .dark-mode {
+            background-color: #333;
+            color: #ffffff;
+        }
+        .dark-mode .navbar {
+            background-color: #444;
+        }
+        .dark-mode .footer {
+            background-color: #555;
+        }
+        .hero {
+            background: #def;
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+        }
+        .card {
+            background: #ccc;
+            padding: 1rem;
+            text-align: center;
+        }
+        .image-grid img {
+            width: 100px;
+            height: 80px;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="#">SAATCHI ART</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item"><button class="btn btn-link nav-link">Novedades</button></li>
+                    <li class="nav-item"><button class="btn btn-link nav-link">Actualizaciones</button></li>
+                    <li class="nav-item"><button class="btn btn-link nav-link">Obras destacadas</button></li>
+                    <li class="nav-item"><button class="btn btn-link nav-link">Pinturas</button></li>
+                    <li class="nav-item"><button class="btn btn-link nav-link">Subasta</button></li>
+                    <li class="nav-item"><button class="btn btn-link nav-link">Compras</button></li>
+                </ul>
+                <div>
+                    <button class="btn btn-outline-secondary toggle-dark-mode">🌙</button>
+                    <button id="lang-en" class="btn btn-outline-secondary">EN</button>
+                    <button id="lang-es" class="btn btn-outline-secondary">ES</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="hero">
+        <h2>Imagen principal</h2>
+    </div>
+
+    <div class="section container">
+        <div class="row">
+            <div class="col-md-4"><div class="card">Grandes obras</div></div>
+            <div class="col-md-4"><div class="card">Novedades</div></div>
+            <div class="col-md-4"><div class="card">Colecciones</div></div>
+        </div>
+    </div>
+
+    <div class="wide-banner text-center">Informacion Actualizada </div>
+
+    <div class="search-bar text-center">🔍 Buscar</div>
+
+    <div class="section container">
+        <div class="row">
+            <div class="col-md-4"><div class="card">Nuevos artistas</div></div>
+            <div class="col-md-4"><div class="card">Fotografia</div></div>
+            <div class="col-md-4"><div class="card">Grafiti</div></div>
+        </div>
+    </div>
+
+    <div class="hero">
+        <h2>Imagen destacada inferior</h2>
+    </div>
+
+    <div class="section container">
+        <div class="wide-banner text-center">Mas de nosotros</div>
+    </div>
+
+    <div class="section container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card">Agregar un título</div>
+                <div class="image-grid">
+                    <img src="https://via.placeholder.com/100x80" alt="img">
+                    <img src="https://via.placeholder.com/100x80" alt="img">
+                    <img src="https://via.placeholder.com/100x80" alt="img">
+                    <img src="https://via.placeholder.com/100x80" alt="img">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card">Informacion de la pagina</div>
+                <div class="image-grid">
+                    <img src="imagenes/32.jpg" alt="img">
+                    <img src="imagenes/hp-toptile1-01062025-large.jpg" alt="img">
+                    <img src="imagenes/hp-toptile1-05082025-large.jpg" alt="img">
+                    <img src="imagenes/hp-toptile1-06252025-large.jpg" alt="img">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer text-center">
+        <div class="container">
+            <button class="btn btn-link"> Grandes Obras </button>
+            <button class="btn btn-link">Novedades</button>
+            <button class="btn btn-link">Coleccion</button>
+            <button class="btn btn-link">Obras</button>
+            <button class="btn btn-link">Agregar un título</button>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const toggleDarkModeButton = document.querySelector('.toggle-dark-mode');
+            const body = document.body;
+
+            // Función para alternar el modo oscuro
+            toggleDarkModeButton.addEventListener('click', () => {
+                body.classList.toggle('dark-mode');
+            });
+
+            const langEnButton = document.getElementById('lang-en');
+            const langEsButton = document.getElementById('lang-es');
+
+            // Contenido en inglés
+            const contentEn = {
+                hero: "Main Image",
+                wideBanner: "Add a title",
+                search: "🔍 Search"
+            };
+
+            // Contenido en español
+            const contentEs = {
+                hero: "Imagen principal",
+                wideBanner: "Agregar un título",
+                search: "🔍 Buscar"
+            };
+
+            // Función para cambiar el contenido según el idioma
+            function changeLanguage(content) {
+                document.querySelector('.hero h2').textContent = content.hero;
+                document.querySelector('.wide-banner').textContent = content.wideBanner;
+                document.querySelector('.search-bar').textContent = content.search;
+            }
+
+            // Cambiar a inglés
+            langEnButton.addEventListener('click', () => {
+                changeLanguage(contentEn);
+            });
+
+            // Cambiar a español
+            langEsButton.addEventListener('click', () => {
+                changeLanguage(contentEs);
+            });
+        });
+    </script>
+
+</body>
+</html>
